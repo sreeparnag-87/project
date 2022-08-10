@@ -1,0 +1,16 @@
+package com.example.demo.Exception;
+
+public class EmployeeNotFoundException extends RuntimeException {
+
+	String string;
+	public EmployeeNotFoundException(String string) {
+		// TODO Auto-generated constructor stub
+		this.string=string;
+	}
+
+	public String getMessage() {
+		// TODO Auto-generated method stub
+		return "Employee Not Found";
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.example.demo.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.example.demo.Entity.Employee;
+
+public interface EmployeeService {
+	Employee addEmployee(Employee employee);
+
+	List<Employee> getEmployee();
+
+	//Employee editEmployee(Employee employee, Long id);
+	Employee editEmployee(Employee employee);
+
+	void deleteEmployee(Long id);
+
+	Optional<Employee> GetEmployeebyId( Long id);
+
+	boolean isbookExist(Employee employee, Long id);
+
+	//Employee GetEmployeebyId(Employee employee, Long id);
+
+}

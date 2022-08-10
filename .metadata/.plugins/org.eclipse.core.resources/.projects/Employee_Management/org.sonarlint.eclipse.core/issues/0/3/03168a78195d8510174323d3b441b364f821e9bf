@@ -1,0 +1,22 @@
+
+[
+java:S3740"/Provide the parametrized type for this generic.(ı·×“H¸RMAJORZ
+CODE_SMELL
+[
+java:S3740'"/Provide the parametrized type for this generic.(ŠÆÜ‹H¹RMAJORZ
+CODE_SMELL
+[
+java:S3740"/Provide the parametrized type for this generic.(ı·×“HºRMAJORZ
+CODE_SMELL
+Z
+java:S1452"&Remove usage of generic wildcard type.(÷›—íşÿÿÿÿH»RCRITICALZ
+CODE_SMELL
+U
+java:S1452"&Remove usage of generic wildcard type.(Ò¸ĞàH¼RCRITICALZ
+CODE_SMELL
+U
+java:S1452""&Remove usage of generic wildcard type.(ÙÒ¯¾H½RCRITICALZ
+CODE_SMELL
+
+java:S1128"URemove this unused import 'org.springframework.web.bind.annotation.ControllerAdvice'.(¶Í„áüÿÿÿÿ8‚õğĞ§0H¾RMINORZ
+CODE_SMELL
