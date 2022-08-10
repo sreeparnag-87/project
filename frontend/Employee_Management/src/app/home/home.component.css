@@ -1,0 +1,54 @@
+.parent{
+    border:1px ;
+    margin:1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+.card{
+    display: inline-block;
+    border: 1px solid;
+    padding: 2rem 2rem;
+    vertical-align: middle;
+}
+
+/* sidebar */
+
+.sidebar {
+width: 18%;
+background:darkgrey;
+height: 100%;
+position: fixed;
+padding-bottom: 45px;
+}
+
+.sidebar a{
+    display: block;
+    width:100%;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: white;
+}
+.sidebar a:hover{
+    background-color: black;
+    /* color: black; */
+}
+
+.sidebar .divider{
+    height: .5px;
+    width:100%;
+    background: gainsboro;
+    margin-top: 10px;
+}
+/* .sidebar .crossBtn{
+position:absolute;
+top: 0;
+right:35px;
+font-size: 36px;
+cursor: pointer;
+padding-bottom: 5px;
+} */
+
+.content{
+margin-left: 20%;
+}
