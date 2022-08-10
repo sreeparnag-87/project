@@ -1,0 +1,18 @@
+{
+  "EmployeeList": [
+    {
+      "id": 1,
+      "firstname": "ram",
+      "lastname": "charan",
+      "emailid": "ram@gmail.com",
+      "phno": 1234567898
+    },
+    {
+      "id": 2,
+      "firstname": "Sreeparna",
+      "lastname": "Ghosh",
+      "emailid": "sreeparna1652@gmail.com",
+      "phno": 8420236837
+    }
+  ]
+}

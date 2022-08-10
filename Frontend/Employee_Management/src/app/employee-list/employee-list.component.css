@@ -1,0 +1,41 @@
+/* sidebar */
+
+.sidebar {
+    width: 18%;
+    background:darkgrey;
+    height: 1000px;
+    position: fixed;
+    padding-bottom: 45px;
+    position: absolute;
+    }
+    
+    .sidebar a{
+        display: block;
+        width:100%;
+        padding: 10px 25px;
+        text-decoration: none;
+        color: white;
+    }
+    .sidebar a:hover{
+        background-color: black;
+        /* color: black; */
+    }
+    
+    /* .sidebar .divider{
+        height: .5px;
+        width:100%;
+        background: gainsboro;
+        margin-top: 10px;
+    }
+    .sidebar .crossBtn{
+    position:absolute;
+    top: 0;
+    right:35px;
+    font-size: 36px;
+    cursor: pointer;
+    padding-bottom: 5px;
+    } */
+    
+   .card{
+    padding-right: 20%;
+   }

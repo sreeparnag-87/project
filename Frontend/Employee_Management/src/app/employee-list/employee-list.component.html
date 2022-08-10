@@ -1,0 +1,81 @@
+<div style="width:100%;">
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <div>
+        <p style=" font-size:20px;font-weight:800;color:white; font-style:normal; padding-right: 20px;"
+          class="text-center"> Employee Management </p>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal">
+          <a class="btn btn-info" href="/Logout"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout </a>
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<!-- sidebar -->
+<div class="sidebar">
+  <!-- <span class="crossBtn">&times;</span> -->
+  <a href="/Home"> <i class="fas fa-home"></i> Home</a><br><br>
+  <a href="/AddEmployee"> <i class="fas fa-pencil-alt"></i> Add Employee </a><br><br>
+  <a aria-current="page" href="/EmployeeList"><i class="fas fa-id-card-alt"></i> Employee List</a><br><br>
+  <a href="/Logout"><i class="fas fa-sign-out-alt"></i> Logout </a>
+  <!-- <div class="divider">
+  </div> -->
+</div>
+<!-- sidebar -->
+
+
+
+<h1 class="text-center"> List Of Employee</h1>
+<div class="container mt-5 " style="width:60%;">
+  <div class="mb-3">
+    <!-- <div class="input-group-text ">
+      <i class="fa fa-search"></i>
+      <input type="text" class="form-control" placeholder="Search Employee By Name" [(ngModel)]="namesearch">
+    </div> -->
+
+    <!-- <i class="fa fa-search"></i> -->
+    <input type="search" class="form-control " placeholder="Search Employee " [(ngModel)]="namesearch"
+      style="margin-left: 10%; width: 100%;">
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0"  style="width:20%;" type="submit">Search</button> -->
+  </div>
+
+  <table class="table table-striped mt-3" style="margin-left: 10%; width: 100%;">
+    <thead>
+      <tr>
+        <th scope="col" (click)="sort('id')">id &nbsp; <i class="fa fa-sort"></i></th>
+        <th scope="col" (click)="sort('fname')">First Name &nbsp;<i class="fa fa-sort"></i> </th>
+        <th scope="col" (click)="sort('lname')">Last Name &nbsp; <i class="fa fa-sort"></i></th>
+        <th scope="col" (click)="sort('eid')">Email Id &nbsp; <i class="fa fa-sort"></i></th>
+        <th scope="col" (click)="sort('phno')">Phone No &nbsp;<i class="fa fa-sort"></i></th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of collection | orderBy: orderHeader : isdescorder |filter:namesearch|
+                 paginate: { itemsPerPage: 4, currentPage: page }">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.firstname }}</td>
+        <td>{{ emp.lastname }}</td>
+        <td>{{ emp.emailid }}</td>
+        <td>{{emp.phno}}</td>
+        <td>
+          <a routerLink="/EditEmployee/{{ emp.id  }}"><i class="fa fa-edit" style="font-size:27.5px;color:red;"></i></a>
+          &nbsp;
+          <a> <i (click)="deleteEmp(emp.id)" class="fa fa-trash"
+              style="font-size:27.5px;color:rgb(132, 0, 255);"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-size: large; font-weight: bolder;color:brown" class="text-center"
+    *ngIf="(collection|filter:namesearch).length === 0">
+    No matches Found!
+  </div>
+  <pagination-controls class="my-pagination" style="color:red;" previousLabel="Previous" nextLabel="Next"
+    class="text-center" (pageChange)="page = $event">
+  </pagination-controls>
+</div>

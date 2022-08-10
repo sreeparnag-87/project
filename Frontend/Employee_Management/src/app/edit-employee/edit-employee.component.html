@@ -1,0 +1,172 @@
+<div style="width:100%;">
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <div>
+        <p style=" font-size:20px;font-weight:800;color:white; font-style:normal; padding-right: 20px;"
+          class="text-center"> Employee Management </p>
+      </div>
+      <!-- <div>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <a href="/Home">Home</a>
+                  
+              </button>
+          </div>
+          <div>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <a class="btn btn-info" href="/AddEmployee">Add Employee </a>
+              </button>
+          </div>
+          <a class="nav-link active" aria-current="page" href="/EmployeeList" class="btn btn-info"
+              type="button">Employee List</a>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/EmployeeList">Employee List</a>
+                  </li>
+              </ul>
+          </div> -->
+      <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal">
+          <a class="btn btn-info" href="/Logout">Logout </a>
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<!-- sidebar -->
+<div class="sidebar">
+  <!-- <span class="crossBtn">&times;</span> -->
+  <a href="/Home"> <i class="fas fa-home"></i> Home</a><br><br>
+  <a href="/AddEmployee"> <i class="fas fa-pencil-alt"></i> Add Employee </a><br><br>
+  <a aria-current="page" href="/EmployeeList"><i class="fas fa-id-card-alt"></i> Employee List</a><br><br>
+  <a href="/Logout"><i class="fas fa-sign-out-alt"></i> Logout </a>
+  <!-- <div class="divider">
+  </div> -->
+</div>
+<!-- sidebar -->
+
+<div class=" text-center" style="padding-left: 27% ;padding-right: 24%; padding-top: 1%;padding-bottom: 1%;">
+  <img src="assets/editemployee.jpg" class="card-img-top " style="height: 400px; width: 100%;">
+  <div class="card-body" style="background-color:gainsboro;">
+    <div class="panel-heading text-center">
+      <h3>EDIT EMPLOYEE DETAILS</h3>
+    </div>
+    <form [formGroup]="editemp" (ngSubmit)="editempdetails()">
+
+      <!-- id -->
+
+      <!-- <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" formControlName="id">
+        </div>
+      </div> -->
+
+      <!-- <div class="input-group flex-nowrap" style="padding-left: 5%;">
+        <span class="input-group-text" id="addon-wrapping"><i class="fa fa-id-card"></i> &nbsp;</span>
+        <div>
+          <input type="email" class="form-control" formControlName="id">
+        </div>
+      </div>
+      <br> -->
+
+
+
+
+      <!-- <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">FIRST NAME</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="firstname"
+            [ngClass]="{'is-invalid':submitted && editemp.controls.firstname.errors }">
+          <div *ngIf="submitted && editemp.controls.firstname.errors" class="text-danger">
+            <div *ngIf="submitted && editemp.controls.firstname.errors">
+              First Name is Required
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="input-group flex-nowrap" style="padding-left: 5%;padding-right: 5%;">
+        <span class="input-group-text" id="addon-wrapping"> <i class="fa fa-user"></i> &nbsp;</span>
+        <input type="text" class="form-control" formControlName="firstname"
+          [ngClass]="{'is-invalid':submitted && editemp.controls.firstname.errors }">
+      </div>
+      <div *ngIf="submitted && editemp.controls.firstname.errors" class="text-danger">
+        <div *ngIf="submitted && editemp.controls.firstname.errors">
+          First Name is Required
+        </div>
+      </div>
+      <br>
+
+      <!-- <div class="row mb-3">
+        <label class="col-sm-2 col-form-label align-middle">LAST NAME</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="lastname"
+            [ngClass]="{'is-invalid':submitted && editemp.controls.lastname.errors }">
+          <div *ngIf="submitted && editemp.controls.lastname.errors" class="text-danger">
+            <div *ngIf="submitted && editemp.controls.lastname.errors">
+              Last Name is Required
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="input-group flex-nowrap" style="padding-left: 5%;padding-right: 5%;">
+        <span class="input-group-text" id="addon-wrapping"> <i class="fa fa-user"></i> &nbsp;</span>
+        <input type="text" class="form-control" formControlName="lastname"
+          [ngClass]="{'is-invalid':submitted && editemp.controls.lastname.errors }">
+      </div>
+      <div *ngIf="submitted && editemp.controls.lastname.errors" class="text-danger">
+        <div *ngIf="submitted && editemp.controls.lastname.errors">
+          Last Name is Required
+        </div>
+      </div>
+      <br>
+
+
+      <!-- <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">EMAIL-ID</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" formControlName="emailid"
+            [ngClass]="{'is-invalid':submitted && editemp.controls.emailid.errors }">
+          <div *ngIf="submitted && editemp.controls.emailid.errors" class="text-danger">
+            <div *ngIf="submitted && editemp.controls.emailid.errors">
+              Last Name is Required
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="input-group flex-nowrap" style="padding-left: 5%;padding-right: 5%;">
+        <span class="input-group-text" id="addon-wrapping"><i class="fa fa-envelope"></i> &nbsp;</span>
+        <input type="email" class="form-control" formControlName="emailid"
+          [ngClass]="{'is-invalid':submitted && editemp.controls.emailid.errors }">
+      </div>
+      <div *ngIf="submitted && editemp.controls.emailid.errors" class="text-danger">
+        <div *ngIf="submitted && editemp.controls.emailid.errors">
+          Last Name is Required
+        </div>
+      </div>
+      <br>
+
+      <!-- <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">PHONE NUMBER</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" formControlName="phno">
+        </div>
+      </div> -->
+
+      <div class="input-group flex-nowrap" style="padding-left: 5%;padding-right: 5%;">
+        <span class="input-group-text" id="addon-wrapping"><i class="fa fa-phone"></i> &nbsp;</span>
+        <input type="number" class="form-control" formControlName="phno">
+      </div>
+      <br>
+
+      <div class="text-center" style="padding-bottom: 2%;;">
+        <button type="submit" class="btn btn-primary">UPDATE</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="container mt-2 p-8 py-2 border px-5">
+    <div class="row" style="width: 80%;padding-left: 130px;">
+        <div class="panel panel-primary">
+            <div class="text-center">
+                <!-- <i class="fa fa-lock" style="font-size:200px; color:rgb(20, 20, 20);"></i> -->
+                <img style="width: 250px;" src="assets/register.jpg">
+            </div>
+            <div class="panel-heading text-center">
+                <h3>Signup</h3>
+                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Please Enter
+                    Your Details</p>
+            </div>
+            <div class="mb-3">
+                <form [formGroup]="uservalue" (ngSubmit)="formsubmit()">
+                    <!-- <div class="form-group">
+                        <i class="fa fa-user"></i> &nbsp;<label class="form-label">Name</label>
+                        <input type="text" class="form-control " placeholder="Enter Your Name" formControlName="name">
+                        <span style="color: red;" *ngIf="name && name.invalid && name.touched">
+                            This input field is Required
+                        </span>
+                    </div> -->
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"> <i class="fa fa-user"></i> &nbsp;</span>
+                        <!-- <i class="fa fa-user"></i> &nbsp;<label class="form-label">Name</label> -->
+                        <input type="text" class="form-control " placeholder="Enter Your Name" formControlName="name">
+
+                    </div>
+                    <span style="color: red;padding-left: 30%;" *ngIf="name && name.invalid && name.touched">
+                        This input field is Required
+                    </span>
+                    <br>
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"><i class="fa fa-envelope"></i> &nbsp;</span>
+                        <!-- <i class="fa fa-envelope"></i> &nbsp; <label class="form-label">Email-Id</label> -->
+                        <input type="text" class="form-control" placeholder="Enter Your Email-Id"
+                            formControlName="username">
+                    </div>
+                    <span style="color: red;padding-left: 30%;"
+                        *ngIf="username && username.invalid && username.touched">
+                        This input field is Required
+                    </span>
+                    <br>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"> <i class="fa fa-lock"></i> &nbsp;</span>
+                        <!-- <i class="fa fa-lock"></i> &nbsp;<label class="form-label">Password</label> -->
+                        <input [type]="changetype?'password':'text'" class="form-control"
+                            placeholder="Enter Your Password" formControlName="password"
+                            [ngClass]="{'is-invalid':submitted && uservalue.controls.password.errors }">
+                        <!-- <div style="color: red;" *ngIf="password && password.invalid && password.touched;">
+                            This input field is Required -->
+                        <!-- <div [ngClass]="uservalue.controls.password.errors?.['minlength']">
+                                Password Should be atleast 8 characters
+                            </div> -->
+                        <!-- </div> -->
+
+                    </div>
+                    <div style="color: red;padding-left: 30%;"
+                        *ngIf="password && password.invalid && password.touched;">
+                        This input field is Required
+
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input class="eyeicon" type="checkbox" (click)="viewpass()"> Show Password
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"> <i class="fa fa-lock"></i> &nbsp;</span>
+                        <!-- <i class="fa fa-lock"></i> &nbsp;<label class="form-label">Confirm Password</label> -->
+                        <input type="password" class="form-control" placeholder="Confirm Your Password"
+                            formControlName="cpassword">
+
+
+                    </div>
+                    <span style="color: red;padding-left: 30%;"
+                        *ngIf="cpassword && cpassword.invalid && cpassword.touched">This input
+                        field is Required
+
+                        <span *ngIf="cpassword.errors && cpassword.errors?.['confirmpasswordMatch']"
+                            class="alert alert-danger"> Password and Confirm password must match
+                        </span>
+                    </span><br>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary" routerLink="/login">LOGIN</button>
+                        &nbsp;
+                        <button [disabled]="uservalue.invalid" type="submit" class="btn btn-primary"
+                            routerLink="/signup">Signup</button>
+                    </div>
+                    <div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
